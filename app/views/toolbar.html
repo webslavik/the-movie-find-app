@@ -5,9 +5,11 @@
 					md-search-text='mainCtrl.searchText'
 					md-items='item in mainCtrl.data'
 					md-item-text="item.original_title"
+					md-selected-item-change="mainCtrl.queryData(mainCtrl.searchText)"
 					md-min-length='1'
 					placeholder='Find your movie...'
-					flex='50'>
+					flex='50'
+					flex-xs='95'>
 			<md-item-template>
 				<span md-highlight-text="mainCtrl.searchText" md-highlight-flags="^i">{{ item.original_title }}</span>
 			</md-item-template>

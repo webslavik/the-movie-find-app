@@ -7,7 +7,6 @@
 
 		let onGetMovie = (data) => {
 			vm.data = data;
-			console.log(data[0]);
 		};
 
 		let onError = (data) => {
@@ -15,11 +14,27 @@
 		};
 
 		vm.queryData = (movie) => {
+
+			if(movie.length === 0) {
+				vm.data = null;
+			}
+
 			TMDb.getMovies(movie)
 				  .then(onGetMovie, onError);
 		}
 
+		TMDb.getMovies()
+		  .then(onGetMovie, onError);
+
 		vm.imagePath = 'http://image.tmdb.org/t/p/w500/';
+
+		// if(vm.searchText.length === 0) {
+		// 	alert('hi');
+		// }
+
+		console.log(vm.searchText);
+
+
 
 
 	}
