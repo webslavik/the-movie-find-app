@@ -3,13 +3,13 @@
 	'use strict';
 
 	angular.module('app', ['ngMaterial'])
-		.config(($mdThemingProvider) => {
+		.config(($mdThemingProvider, $mdIconProvider) => {
 			$mdThemingProvider.theme('default')
 		    .primaryPalette('blue')
 		    .accentPalette('pink');
 
-		  $mdThemingProvider.theme('dark-grey')
-		  	.backgroundPalette('grey').dark();
+		  $mdIconProvider
+		  	.icon('question', 'img/icons/question.svg');
 		});
 
 })();

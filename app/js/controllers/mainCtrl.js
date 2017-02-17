@@ -2,7 +2,7 @@
 
 	'use strict';
 
-	function mainCtrl(TMDb) {
+	function mainCtrl($mdDialog, $mdMedia, TMDb) {
 		let vm = this;
 
 		let onGetMovie = (data) => {
@@ -12,6 +12,22 @@
 		let onError = (data) => {
 			console.log('Something went wrong...');
 		};
+
+		vm.about = (event) => {
+			let useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
+
+			$mdDialog.show({
+				templateUrl: 'views/about.html',
+				parent: angular.element(document.body),
+				// controller: 'aboutCtrl',
+				// controllerAs: 'aboutCtrl',
+				targetEvent: event,
+	      clickOutsideToClose: true,
+	      fullscreen: useFullScreen
+			});
+
+		}
+
 
 		vm.queryData = (movie) => {
 
@@ -27,14 +43,6 @@
 		  .then(onGetMovie, onError);
 
 		vm.imagePath = 'http://image.tmdb.org/t/p/w500/';
-
-		// if(vm.searchText.length === 0) {
-		// 	alert('hi');
-		// }
-
-		console.log(vm.searchText);
-
-
 
 
 	}

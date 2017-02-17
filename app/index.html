@@ -17,6 +17,9 @@
 		<div class="page-wrap" ng-controller='mainCtrl as mainCtrl'>
 			<div ng-include='"views/toolbar.html"'></div>
 			<div ng-include='"views/cards-list.html"'></div>
+			<md-button class="md-fab md-fab-bottom-right" aria-label="question" ng-click='mainCtrl.about($event)'>
+				<md-icon md-svg-icon='question'></md-icon>
+			</md-button>
 		</div>
 
 	<!-- build:js js/vendor.js -->

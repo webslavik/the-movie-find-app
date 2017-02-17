@@ -13,6 +13,14 @@
 img {
   max-width: 100%; }
 
+.content {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto; }
+
 .card.ng-enter, .card.ng-move {
   -webkit-transition: 400ms all;
   transition: 400ms all;
@@ -27,3 +35,7 @@ img {
 
 .card__title {
   text-align: center; }
+
+.card__button {
+  display: block;
+  width: 100%; }
