@@ -1,0 +1,19 @@
+<md-content>
+	<md-toolbar class='toolbar' layout='row' layout-align='center center'>
+		<md-autocomplete
+					md-search-text-change='mainCtrl.queryData(mainCtrl.searchText)'
+					md-search-text='mainCtrl.searchText'
+					md-items='item in mainCtrl.data'
+					md-item-text="item.original_title"
+					md-min-length='1'
+					placeholder='Find your movie...'
+					flex='50'>
+			<md-item-template>
+				<span md-highlight-text="mainCtrl.searchText" md-highlight-flags="^i">{{ item.original_title }}</span>
+			</md-item-template>
+			<md-not-found>
+				"{{mainCtrl.searchText}}" not found :(
+			</md-not-found>
+		</md-autocomplete>
+	</md-toolbar>
+</md-content>

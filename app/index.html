@@ -14,7 +14,10 @@
 </head>
 <body ng-cloak>
 
-	
+		<div class="page-wrap" ng-controller='mainCtrl as mainCtrl'>
+			<div ng-include='"views/toolbar.html"'></div>
+			<div ng-include='"views/cards-list.html"'></div>
+		</div>
 
 	<!-- build:js js/vendor.js -->
 	<script src="libs/angular/angular.js"></script>
@@ -25,7 +28,8 @@
 	<script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
 	<!-- endbuild -->
 	<script src="js/app.js"></script>
-	<script src="js/controllers/searchCtrl.js"></script>
+	<script src="js/services/TMDb.js"></script>
+	<script src="js/controllers/mainCtrl.js"></script>
 
 </body>
 </html>

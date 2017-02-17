@@ -1,0 +1,15 @@
+<md-content>
+	<div layout='row' layout-wrap>
+		<md-card md-theme='dark-grey' ng-repeat='card in mainCtrl.data' flex='33'>
+			<div class="card__poster">
+				<img ng-src="{{ mainCtrl.imagePath }}{{ card.poster_path }}" alt="card.original_title">
+			</div>
+			<md-card-title>
+				<span class='md-headline'>{{ card.original_title}}</span>
+			</md-card-title>
+			<md-card-content>
+				<p>{{ card.overview }}</p>
+			</md-card-content>
+		</md-card>
+	</div>
+</md-content>
