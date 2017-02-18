@@ -33,7 +33,7 @@
 				// controllerAs: 'aboutCtrl',
 				targetEvent: event,
 	      clickOutsideToClose: true,
-	      fullscreen: useFullScreen
+	      // fullscreen: useFullScreen
 			});
 
 		}

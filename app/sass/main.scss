@@ -9,9 +9,21 @@
 }
 
 
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
 img {
 	max-width: 100%;
 }
+
 
 
 .content {
@@ -27,6 +39,9 @@ img {
 	// padding: 8px; 
 }
 
+
+// Card
+// -------------------------------------------
 .card {
 	&.ng-enter,
 	&.ng-move {
@@ -54,3 +69,8 @@ img {
 }
 
 
+// About
+// -------------------------------------------
+.about {
+	max-width: 700px;
+}

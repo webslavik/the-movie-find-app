@@ -10,6 +10,15 @@
   100% {
     opacity: 0; } }
 
+h1,
+h2,
+h3,
+p {
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
 img {
   max-width: 100%; }
 
@@ -39,3 +48,6 @@ img {
 .card__button {
   display: block;
   width: 100%; }
+
+.about {
+  max-width: 700px; }
