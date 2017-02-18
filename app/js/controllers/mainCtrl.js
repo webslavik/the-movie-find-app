@@ -9,9 +9,19 @@
 			vm.data = data;
 		};
 
-		let onError = (data) => {
+		let onError = (error) => {
 			console.log('Something went wrong...');
 		};
+
+
+		let onGetUpcoming = (data) => {
+			vm.data = data;
+		};
+
+		let onUpcomingError = (error) => {
+			console.log('Upcoming data is error');
+		}
+
 
 		vm.about = (event) => {
 			let useFullScreen = ($mdMedia('sm') || $mdMedia('xs'));
@@ -28,22 +38,23 @@
 
 		}
 
-
 		vm.queryData = (movie) => {
 
 			if(movie.length === 0) {
-				vm.data = null;
+				TMDb.getUpcoming()
+						.then(onGetUpcoming, onUpcomingError);
 			}
 
 			TMDb.getMovies(movie)
 				  .then(onGetMovie, onError);
 		}
 
-		TMDb.getMovies()
-		  .then(onGetMovie, onError);
+
+		TMDb.getUpcoming()
+				.then(onGetUpcoming, onUpcomingError);
+
 
 		vm.imagePath = 'http://image.tmdb.org/t/p/w500/';
-
 
 	}
 
