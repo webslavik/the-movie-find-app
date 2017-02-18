@@ -7,6 +7,7 @@
 		const API = '?api_key=48b40155da6e1c749302058b3380da7a';
 		const URL = 'https://api.themoviedb.org/3/';
 		const SEARCH_MOVIE = 'search/movie';
+		const MOVIE = 'movie/'
 		const UPCOMING = 'movie/upcoming'
 		const QUERY = '&query=';
 
@@ -26,6 +27,14 @@
 										return response.data.results;
 									});
 		};
+
+		service.getMoreInfo = (id) => {
+			return $http.get(URL + MOVIE + id + API)
+									.then(response => {
+										return response.data;
+									});
+		}
+
 
 		return service;
 		

@@ -15,11 +15,9 @@
 <body ng-cloak>
 
 		<div class="page-wrap" ng-controller='mainCtrl as mainCtrl'>
-			<div ng-include='"views/toolbar.html"'></div>
-			<div ng-include='"views/cards-list.html"'></div>
-			<md-button class="md-fab md-fab-bottom-right" aria-label="question" ng-click='mainCtrl.about($event)'>
-				<md-icon md-svg-icon='question'></md-icon>
-			</md-button>
+			<div ui-view='toolbar'></div>
+			<div ui-view='content'></div>
+			<div ui-view='about-button'></div>
 		</div>
 
 	<!-- build:js js/vendor.js -->
@@ -33,6 +31,7 @@
 	<script src="js/app.js"></script>
 	<script src="js/services/TMDb.js"></script>
 	<script src="js/controllers/mainCtrl.js"></script>
+	<script src="js/controllers/cardCtrl.js"></script>
 
 </body>
 </html>
