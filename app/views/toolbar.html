@@ -1,5 +1,6 @@
 <md-content>
-	<md-toolbar class='toolbar' layout='row' layout-align='center center'>
+	<md-toolbar class='toolbar' layout='row' layout-align='space-between center'>
+		<a class='md-raised md-warn' ui-sref="home">Home</a>
 		<md-autocomplete
 					md-search-text-change='mainCtrl.queryData(mainCtrl.searchText)'
 					md-search-text='mainCtrl.searchText'
@@ -11,11 +12,16 @@
 					flex='50'
 					flex-xs='95'>
 			<md-item-template>
-				<span md-highlight-text="mainCtrl.searchText" md-highlight-flags="^i">{{ item.original_title }}</span>
+				<span
+					 md-highlight-text="mainCtrl.searchText" 
+					 md-highlight-flags="^i"
+					 ng-click='mainCtrl.test(item)'>
+					 {{ item.original_title }}</span>
 			</md-item-template>
 			<md-not-found>
 				"{{mainCtrl.searchText}}" not found :(
 			</md-not-found>
 		</md-autocomplete>
+		<a class='md-raised md-warn' ui-sref="home"></a>
 	</md-toolbar>
 </md-content>

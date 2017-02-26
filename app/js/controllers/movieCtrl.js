@@ -6,7 +6,7 @@
 		let vm = this;
 
 		let onGetMore = (data) => {
-			vm.aboutMovie = data;
+			vm.data = data;
 			console.log(data);
 		};
 
@@ -16,6 +16,8 @@
 
 		TMDb.getMoreInfo($stateParams.movieId)
 				.then(onGetMore, onError);
+
+		vm.imagePath = 'http://image.tmdb.org/t/p/w500/';
 
 	}
 

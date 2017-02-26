@@ -56,6 +56,10 @@
 
 		vm.imagePath = 'http://image.tmdb.org/t/p/w500/';
 
+		vm.test = (item) => {
+			console.log(item);
+		}
+
 	}
 
 	angular.module('app').controller('mainCtrl', mainCtrl);
