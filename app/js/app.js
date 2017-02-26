@@ -7,13 +7,14 @@
 
 	angular.module('app').config(($stateProvider, $urlRouterProvider) => {
 
+		$urlRouterProvider.otherwise('');
 
 		$stateProvider
 
 		// home
-		.state('theMovie', {
+		.state('home', {
 			url: '',
-			abtsract: true,
+			// abtsract: true,
 			views: {
 				'toolbar': {
 					templateUrl: 'views/toolbar.html'
@@ -24,6 +25,18 @@
 				'content': {
 					templateUrl: 'views/cards-list.html'
 				},
+			}
+		})
+
+		.state('home.movie', {
+			// parent: 'home',
+			url: '/movie/:movieId',
+			views: {
+				'content@': {
+					templateUrl: 'views/movie.html',
+					controller: 'movieCtrl',
+					controllerAs: 'movieCtrl'
+				}
 			}
 		})
 

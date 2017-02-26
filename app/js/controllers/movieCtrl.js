@@ -2,11 +2,11 @@
 
 	'use strict';
 
-	function cardCtrl(TMDb) {
+	function movieCtrl($stateParams, TMDb) {
 		let vm = this;
 
 		let onGetMore = (data) => {
-			// vm.data = data;
+			vm.aboutMovie = data;
 			console.log(data);
 		};
 
@@ -14,14 +14,11 @@
 			console.log(`Can't get more info about movie...`);
 		};
 
-		vm.getMovieId = (id) => {
-			TMDb.getMoreInfo(id)
-					.then(onGetMore, onError);
-		};
-
+		TMDb.getMoreInfo($stateParams.movieId)
+				.then(onGetMore, onError);
 
 	}
 
-	angular.module('app').controller('cardCtrl', cardCtrl);
+	angular.module('app').controller('movieCtrl', movieCtrl);
 
 })();
