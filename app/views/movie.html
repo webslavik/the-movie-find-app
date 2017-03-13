@@ -1,0 +1,10 @@
+<md-content class='movie'>
+
+	<h1>{{ movieCtrl.data.original_title }}</h1>
+	<h2>{{ movieCtrl.data.tagline }}</h2>
+	<p>{{ movieCtrl.data.overview }}</p>
+	<div>
+		<img src="{{ movieCtrl.imagePath + movieCtrl.data.poster_path }}" alt="">
+	</div>
+
+</md-content>

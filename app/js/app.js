@@ -5,25 +5,40 @@
 	angular.module('app', ['ngMaterial', 'ui.router'])
 
 
-	angular.module('app').config(($stateProvider) => {
+	angular.module('app').config(($stateProvider, $urlRouterProvider) => {
+
+		$urlRouterProvider.otherwise('');
 
 		$stateProvider
-			.state('themovie', {
-				url: '',
-				abtsract: true,
-				views: {
-					'toolbar': {
-						templateUrl: 'views/toolbar.html'
-					},
-					'cards-list': {
-						templateUrl: 'views/cards-list.html'
-					},
-					'about-button': {
-						templateUrl: 'views/about-button.html'
-					}
-				}
-			});
 
+		// home
+		.state('home', {
+			url: '',
+			// abtsract: true,
+			views: {
+				'toolbar': {
+					templateUrl: 'views/toolbar.html'
+				},
+				'about-button': {
+					templateUrl: 'views/about-button.html'
+				},
+				'content': {
+					templateUrl: 'views/cards-list.html'
+				},
+			}
+		})
+
+		.state('home.movie', {
+			// parent: 'home',
+			url: '/movie/:movieId',
+			views: {
+				'content@': {
+					templateUrl: 'views/movie.html',
+					controller: 'movieCtrl',
+					controllerAs: 'movieCtrl'
+				}
+			}
+		})
 	});
 
 

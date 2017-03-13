@@ -15,7 +15,10 @@
 					</md-card-title-text>
 				</md-card-title>
 				<md-card-actions layout='row' layout-align='center'>
-					<md-button class='card__button'>View</md-button>
+					<a ui-sref='home.movie({movieId: card.id})' 
+						 class='md-primary'
+						 class='card__button'>
+						 View more</a>
 				</md-card-actions>
 			</div>
 		</md-card>
